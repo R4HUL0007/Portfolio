@@ -75,7 +75,7 @@ export function createSpider({ size = 120 } = {}) {
 }
 
 export function mountHangSpider(mount) {
-    if (mount) mount.appendChild(createSpider({ size: 118 }));
+    if (mount) mount.appendChild(createSpider({ size: 74 }));
 }
 
 /** Vanilla web-shoot: strand draws to the click point, spark expands, both fade. */

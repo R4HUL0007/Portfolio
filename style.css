@@ -103,7 +103,8 @@ img { display: block; max-width: 100%; }
 /* ===================== LAYOUT ===================== */
 .app { display: flex; min-height: 100vh; }
 .main { flex: 1; margin-left: var(--sidebar-w); padding: 0 clamp(20px, 5vw, 64px) 80px 84px; position: relative; }
-section, .footer { max-width: var(--maxw); margin: 0 auto; }
+section:not(.hero), .footer { max-width: var(--maxw); margin: 0 auto; }
+.hero { max-width: none; }
 
 /* ===================== SIDEBAR ===================== */
 .sidebar {
@@ -152,7 +153,7 @@ section, .footer { max-width: var(--maxw); margin: 0 auto; }
 [data-theme="light"] .btn--ghost img { filter: none; }
 
 /* ===================== HERO ===================== */
-.hero { position: relative; min-height: 92vh; display: flex; flex-direction: column; justify-content: center; padding: 60px 0 40px; }
+.hero { position: relative; min-height: 100vh; display: flex; flex-direction: column; justify-content: center; padding: 60px 0 40px; }
 .hero > .cap, .hero__name, .hero__role, .hero__lede, .hero__actions, .hero__hint { position: relative; z-index: 3; }
 
 .hero__name {
@@ -173,29 +174,44 @@ html.spider-active .hero__hint { display: inline-flex; }
 
 .hero__thwip { position: absolute; right: 12%; top: 70px; font-size: 2.5rem; transform: rotate(9deg); z-index: 3; }
 
-/* hero background web */
-.hero-web { position: absolute; inset: -90px -130px auto auto; width: min(80vw, 920px); height: auto; pointer-events: none; z-index: 1; overflow: visible; opacity: 1; }
-.web-spoke { fill: none; stroke: rgba(255, 255, 255, 0.24); stroke-width: 1; vector-effect: non-scaling-stroke; }
-.web-thread { fill: none; stroke: rgba(255, 255, 255, 0.16); stroke-width: 0.8; vector-effect: non-scaling-stroke; }
-[data-theme="light"] .web-spoke { stroke: rgba(0, 0, 0, 0.22); }
-[data-theme="light"] .web-thread { stroke: rgba(0, 0, 0, 0.15); }
+/* hero background web — plain white (as before) */
+.hero-web { position: absolute; inset: -50px -60px auto auto; width: min(52vw, 560px); height: auto; pointer-events: none; z-index: 1; overflow: visible; opacity: 1; }
+.web-spoke { fill: none; stroke: rgba(255, 255, 255, 0.22); stroke-width: 1; vector-effect: non-scaling-stroke; }
+.web-thread { fill: none; stroke: rgba(255, 255, 255, 0.15); stroke-width: 0.8; vector-effect: non-scaling-stroke; }
+[data-theme="light"] .web-spoke { stroke: rgba(0, 0, 0, 0.2); }
+[data-theme="light"] .web-thread { stroke: rgba(0, 0, 0, 0.14); }
 
-/* atmosphere behind the web: cyan glow up-right, reddish glow lower-right */
-.hero::before {
-    content: ""; position: absolute; inset: -40px -80px -40px 0; z-index: 0; pointer-events: none;
+/* ===================== PAGE-WIDE THEME (fixed) ===================== */
+/* soft cyan + reddish glow behind the whole page */
+body::before {
+    content: ""; position: fixed; inset: 0; z-index: -2; pointer-events: none;
     background:
-        radial-gradient(720px 460px at 74% 24%, rgba(34, 211, 238, 0.16), transparent 62%),
-        radial-gradient(620px 460px at 82% 74%, rgba(255, 59, 107, 0.16), transparent 62%);
+        radial-gradient(1300px 950px at 90% -2%, rgba(34, 211, 238, 0.14), transparent 66%),
+        radial-gradient(1100px 850px at 78% 102%, rgba(255, 59, 107, 0.10), transparent 64%);
 }
-[data-theme="light"] .hero::before {
+[data-theme="light"] body::before {
     background:
-        radial-gradient(720px 460px at 74% 24%, rgba(8, 145, 178, 0.14), transparent 62%),
-        radial-gradient(620px 460px at 82% 74%, rgba(214, 40, 80, 0.12), transparent 62%);
+        radial-gradient(1300px 950px at 90% -2%, rgba(8, 145, 178, 0.11), transparent 66%),
+        radial-gradient(1100px 850px at 78% 102%, rgba(214, 40, 80, 0.08), transparent 64%);
+}
+/* glowing radial perspective ray-bands across the whole page */
+body::after {
+    content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none;
+    background: repeating-conic-gradient(from 0deg at 88% 4%,
+        rgba(56, 226, 255, 0.09) 0deg 1.4deg, transparent 1.4deg 13deg);
+    -webkit-mask: radial-gradient(160% 175% at 88% 4%, #000 8%, transparent 100%);
+            mask: radial-gradient(160% 175% at 88% 4%, #000 8%, transparent 100%);
+    mix-blend-mode: screen;
+}
+[data-theme="light"] body::after {
+    background: repeating-conic-gradient(from 0deg at 88% 4%,
+        rgba(8, 145, 178, 0.11) 0deg 1.4deg, transparent 1.4deg 13deg);
+    mix-blend-mode: multiply;
 }
 
 /* hero hanging spider */
-.hang-spider { position: absolute; top: 120px; right: clamp(70px, 20vw, 260px); width: 118px; z-index: 2; pointer-events: none; }
-.hang-spider::before { content: ""; position: absolute; bottom: 100%; left: 50%; width: 2px; height: 120px; background: linear-gradient(180deg, transparent, rgba(255,255,255,0.55)); transform: translateX(-50%); }
+.hang-spider { position: absolute; top: 150px; right: clamp(60px, 15vw, 200px); width: 74px; z-index: 2; pointer-events: none; }
+.hang-spider::before { content: ""; position: absolute; bottom: 100%; left: 50%; width: 2px; height: 70px; background: linear-gradient(180deg, transparent, rgba(255,255,255,0.55)); transform: translateX(-50%); }
 [data-theme="light"] .hang-spider::before { background: linear-gradient(180deg, transparent, rgba(0,0,0,0.35)); }
 .hang-spider .spider-svg { animation: sway 3.4s ease-in-out infinite; transform-origin: top center; filter: drop-shadow(0 14px 24px rgba(0,0,0,0.6)); }
 @keyframes sway { 0%,100% { transform: rotate(-3.5deg); } 50% { transform: rotate(3.5deg); } }
@@ -203,15 +219,9 @@ html.spider-active .hero__hint { display: inline-flex; }
 .spider-svg { display: block; overflow: visible; }
 .spider-eyes circle { filter: drop-shadow(0 0 2.5px var(--accent-glow)); }
 
-/* ===================== PANELS ===================== */
+/* ===================== SECTIONS (open, no card box) ===================== */
 .panel {
-    background: var(--panel); border: 3px solid var(--ink); border-radius: var(--radius);
-    padding: clamp(22px, 3vw, 34px); margin-top: 42px; box-shadow: 6px 6px 0 rgba(0,0,0,0.5); position: relative; overflow: hidden;
-}
-.panel::after {
-    content: ""; position: absolute; inset: 0; opacity: 0.35; pointer-events: none;
-    background-image: radial-gradient(rgba(0,0,0,0.5) 1.2px, transparent 1.3px); background-size: 8px 8px;
-    -webkit-mask: linear-gradient(135deg, #000, transparent 55%); mask: linear-gradient(135deg, #000, transparent 55%);
+    padding: 30px 0 20px; margin-top: 24px; position: relative;
 }
 .panel > * { position: relative; z-index: 1; }
 .tech__subtitle { margin: 26px 0 12px; font-family: "Bangers", cursive; letter-spacing: 1px; color: var(--text-dim); font-size: 1.1rem; }
@@ -229,7 +239,7 @@ html.spider-active .hero__hint { display: inline-flex; }
 .chips--sm .chip { padding: 5px 10px; font-size: 0.7rem; box-shadow: 1px 1px 0 var(--ink); background: var(--panel-2); color: var(--text-dim); }
 
 /* ===================== PROJECTS ===================== */
-.projects { margin-top: 60px; }
+.projects { margin-top: 24px; }
 .projects__head { display: flex; align-items: flex-end; justify-content: space-between; gap: 16px; margin-bottom: 22px; }
 .projects__all { font-weight: 800; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.05em; color: var(--text-dim); border: 2px solid var(--ink); border-radius: 999px; padding: 8px 14px; box-shadow: 2px 2px 0 var(--ink); background: var(--panel); transition: 0.2s var(--ease); }
 .projects__all:hover { color: var(--cyan); border-color: var(--cyan); transform: translate(-2px,-2px); box-shadow: 4px 4px 0 var(--ink); }

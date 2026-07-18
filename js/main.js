@@ -2,7 +2,7 @@
 // (cursor + scroll journey + hero web). Everything degrades gracefully and
 // respects prefers-reduced-motion.
 
-import { initSpiderCursor, initJourney } from "./spider.js";
+import { initSpiderCursor, initJourney, mountHangSpider } from "./spider.js";
 import { buildWeb } from "./web.js";
 
 const motionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -84,8 +84,9 @@ function initSpiderSystem() {
     const reducedMotion = motionQuery.matches;
 
     const webSvg = document.getElementById("heroWeb");
-    if (webSvg) buildWeb(webSvg, { cx: 560, cy: 185, radius: 760, spokes: 30, rings: 16, sag: 0.15 });
+    if (webSvg) buildWeb(webSvg, { cx: 560, cy: 180, radius: 640, spokes: 26, rings: 14, sag: 0.15 });
 
+    mountHangSpider(document.getElementById("hangSpider"));
     initSpiderCursor();
     initJourney({ reducedMotion });
 }
