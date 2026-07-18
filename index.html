@@ -35,9 +35,6 @@
             </nav>
 
             <div class="sidebar__footer">
-                <a class="btn btn--ghost btn--block" href="Rahul_Mehta1.pdf" target="_blank" rel="noopener">
-                    <span aria-hidden="true">⬇</span> Download CV
-                </a>
                 <div class="sidebar__social">
                     <a href="https://github.com/R4HUL0007" target="_blank" rel="noopener" aria-label="GitHub">
                         <img src="images/icons/github.png" alt="" width="20" height="20" />
@@ -73,9 +70,9 @@
                 </p>
 
                 <div class="hero__actions reveal">
-                    <a class="btn btn--primary" href="Rahul_Mehta1.pdf" target="_blank" rel="noopener">
-                        Resume <span aria-hidden="true">⬇</span>
-                    </a>
+                    <button class="btn btn--primary" id="gameOpen" type="button">
+                        <span aria-hidden="true">🕸</span> Play a Game
+                    </button>
                     <a class="btn btn--ghost" href="https://github.com/R4HUL0007" target="_blank" rel="noopener">
                         <img src="images/icons/github.png" alt="" width="16" height="16" /> GitHub
                     </a>
@@ -270,6 +267,28 @@
                 <p class="footer__copy muted">© 2024 Rahul Mehta</p>
             </footer>
         </main>
+    </div>
+
+    <!-- ===================== MINI-GAME: WEB CATCH ===================== -->
+    <div class="game" id="game" hidden>
+        <div class="game__backdrop" id="gameBackdrop"></div>
+        <div class="game__panel" role="dialog" aria-label="Web Catch mini-game">
+            <div class="game__head">
+                <span class="game__title">Web Catch 🕸</span>
+                <div class="game__stats">
+                    <span>Score <b id="gameScore">0</b></span>
+                    <span>Time <b id="gameTime">30</b></span>
+                    <span>Best <b id="gameBest">0</b></span>
+                </div>
+                <button class="game__close" id="gameClose" type="button" aria-label="Close game">✕</button>
+            </div>
+            <div class="game__area" id="gameArea">
+                <div class="game__overlay" id="gameOverlay">
+                    <p class="game__msg" id="gameMsg">Catch the flies before they escape — tap them to web 'em! 🕷</p>
+                    <button class="btn btn--primary" id="gameStart" type="button">Start</button>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- ===================== CHATBOT (canned answers, no real AI) ===================== -->

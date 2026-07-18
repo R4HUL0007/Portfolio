@@ -8,7 +8,7 @@ const REPLIES = {
     experience: "Currently an AI/ML Intern @ <a href='https://myonsitehealthcare.com/' target='_blank' rel='noopener'>MyOnsite Healthcare ↗</a>.<br>Previously a Full-Stack Developer intern @ <a href='https://www.shadowfox.in/' target='_blank' rel='noopener'>ShadowFox ↗</a>.<br><a href='#experience' data-jump>See timeline →</a>",
     education: "B.Tech in Computer Science &amp; Engineering — completed. 🎓",
     contact: "Reach him via the <a href='#contact' data-jump>contact form</a>, or on <a href='https://github.com/R4HUL0007' target='_blank' rel='noopener'>GitHub ↗</a>, <a href='https://www.linkedin.com/in/rahul-mehta-616a5b212' target='_blank' rel='noopener'>LinkedIn ↗</a>, or <a href='https://x.com/RahulMe91416413' target='_blank' rel='noopener'>X ↗</a>.",
-    resume: "Grab his <a href='Rahul_Mehta1.pdf' target='_blank' rel='noopener'>resume (PDF) ↗</a> 📄, or use the Download CV button in the sidebar.",
+    resume: "For his detailed resume, reach out via the <a href='#contact' data-jump>contact form</a> and he'll share it with you directly. 📄",
     hire: "He's open to opportunities! Drop a message via the <a href='#contact' data-jump>contact form</a> and he'll swing back to you soon.",
     greeting: "Hey there! 👋 I'm WebBot. Ask me about Rahul's skills, projects, experience, or how to reach him.",
     identity: "I'm WebBot 🕸 — Rahul's friendly assistant. I can tell you about his skills, projects, experience, and how to reach him.",

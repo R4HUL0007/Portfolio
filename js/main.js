@@ -6,6 +6,7 @@ import { initSpiderCursor, initJourney } from "./spider.js";
 import { buildWeb } from "./web.js";
 import { initMagnetic, initCountUp } from "./enhance.js";
 import { initChatbot } from "./chatbot.js";
+import { initGame } from "./game.js";
 
 const motionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
 
@@ -101,6 +102,7 @@ function boot() {
     initMagnetic();
     initCountUp({ reducedMotion: motionQuery.matches });
     initChatbot();
+    initGame();
 }
 
 if (document.readyState === "loading") {
