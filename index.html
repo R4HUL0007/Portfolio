@@ -1,177 +1,245 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rahul Mehta - Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-    <script type="text/javascript" src="script.js" defer></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Rahul Mehta — Full-Stack Web Developer. Building digital experiences that are fast, scalable and visually exceptional." />
+    <title>Rahul Mehta — Web Developer</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="spider1.png" type="image/png" />
+
+    <script type="module" src="js/main.js"></script>
 </head>
 <body>
+    <a class="skip-link" href="#main">Skip to content</a>
 
-    
+    <div class="app">
+        <!-- ===================== SIDEBAR ===================== -->
+        <aside class="sidebar" aria-label="Primary">
+            <div class="sidebar__brand">
+                <span class="sidebar__logo">RM<span>.</span></span>
+            </div>
 
-    <nav class="navbar">
-        <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-            <li> <a href="#social">Social</a></li>
-        </ul>
-    </nav>
+            <nav class="sidebar__nav" aria-label="Sections">
+                <a href="#about" class="nav-link is-active" data-nav><span>About</span></a>
+                <a href="#skills" class="nav-link" data-nav><span>Skills</span></a>
+                <a href="#projects" class="nav-link" data-nav><span>Projects</span></a>
+                <a href="#experience" class="nav-link" data-nav><span>Experience</span></a>
+                <a href="#contact" class="nav-link" data-nav><span>Contact</span></a>
+                <a href="#social" class="nav-link" data-nav><span>Social</span></a>
+            </nav>
 
-    <img id="spider" src="spider1.png" alt="Hanging Spider">
-    <div id="spider-web"></div>
-    
-    
+            <div class="sidebar__footer">
+                <a class="btn btn--ghost btn--block" href="Rahul_Mehta1.pdf" target="_blank" rel="noopener">
+                    <span aria-hidden="true">⬇</span> Download CV
+                </a>
+                <div class="sidebar__social">
+                    <a href="https://github.com/R4HUL0007" target="_blank" rel="noopener" aria-label="GitHub">
+                        <img src="images/icons/github.png" alt="" width="20" height="20" />
+                    </a>
+                    <a href="https://www.linkedin.com/in/rahul-mehta-616a5b212" target="_blank" rel="noopener" aria-label="LinkedIn">
+                        <img src="images/icons/linkedin.png" alt="" width="20" height="20" />
+                    </a>
+                    <a href="https://x.com/RahulMe91416413" target="_blank" rel="noopener" aria-label="Twitter / X">
+                        <img src="images/icons/twitter.png" alt="" width="20" height="20" />
+                    </a>
+                </div>
+                <p class="sidebar__copy">© 2024 Rahul Mehta</p>
+            </div>
+        </aside>
 
-    <section id="about">
-        <h1>Rahul Mehta</h1>
-        <h2><span >Web</span> <span>Developer</span></h2>
-    
-        <p>Hi there, I am <span>Rahul Mehta</span>. I am a full-stack <span>Web Developer</span>.</p>
-    
-        <p class="motto"><strong>Building the future, one line of code at a time.</strong></p>
-    
-        <p>Currently pursuing a degree in <strong>B.Tech CSE</strong>, passionate about crafting responsive and dynamic web solutions that engage users and drive success.</p>
-    
-        <p>Intern @ <a href="https://myonsitehealthcare.com//" target="_blank"  strong class="highlight-red">MyOnSite  </a></strong> as a <strong>Full-Stack Developer</strong>.</p>
-        <div class="btn-group">
-              <a href="images/Rahul_Mehta1.pdf" class="btn github" target="_blank"  ">Resume </a>
-            </div>
-    </section>
-    
-    
+        <!-- ===================== MAIN ===================== -->
+        <main class="main" id="main">
+            <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle color theme">
+                <span class="theme-toggle__icon" aria-hidden="true">☀</span>
+            </button>
 
-    <section id="skills">
-        <h2>Skills</h2>
-        <div class="icons">
-            <div class="tooltip">
-                <img src="images/icons/javascript.png" alt="JavaScript">
-                <span class="tooltiptext">JavaScript</span>
-            </div>
-            <div class="tooltip">
-                <img src="images/icons/node.png" alt="Node.js">
-                <span class="tooltiptext">Node.js</span>
-            </div>
-            <div class="tooltip">
-                <img src="images/icons/react.png" alt="React.js">
-                <span class="tooltiptext">React.js</span>
-            </div>
-            <div class="tooltip">
-                <img src="images/icons/mongo.png" alt="MongoDB">
-                <span class="tooltiptext">MongoDB</span>
-            </div>
-            <div class="tooltip">
-                <img src="images/icons/html.png" alt="HTML">
-                <span class="tooltiptext">HTML</span>
-            </div>
-            <div class="tooltip">
-                <img src="images/icons/css.png" alt="CSS">
-                <span class="tooltiptext">CSS</span>
-            </div>
-            <div class="tooltip">
-                <img src="images/icons/flask.png" alt="Flask">
-                <span class="tooltiptext">Flask</span>
-            </div>
-        </div>
-        
-    </section>
-   
-    
-    <!-- New Programming Languages Section -->
-    <section id="languages">
-        <h2>Programming Languages</h2>
-        <div class="icons">
-            <div class="tooltip">
-                <img src="images/icons/javascript.png" alt="JavaScript">
-                <span class="tooltiptext">JavaScript</span>
-            </div>
-            <div class="tooltip">
-                <img src="images/icons/c.png" alt="C">
-                <span class="tooltiptext">C</span>
-            </div>
-            <div class="tooltip">
-                <img src="images/icons/python.png" alt="Python">
-                <span class="tooltiptext">Python</span>
-            </div>
-            <div class="tooltip">
-                <img src="images/icons/java.png" alt="Java">
-                <span class="tooltiptext">Java</span>
-            </div>
-        </div>
-    </section>
-    
+            <!-- ---------- HERO ---------- -->
+            <section id="about" class="hero" data-sec aria-label="Introduction">
+                <svg class="hero-web" id="heroWeb" viewBox="0 0 760 700" aria-hidden="true"></svg>
+                <span class="bang hero__thwip" aria-hidden="true">THWIP!</span>
 
-    <section id="projects">
-        <h2>Projects</h2>
-        <div class="project-card">
-            <h3>Atulya Yatra - Tourism Web App</h3>
-            
-            <p>Atulya Yatra is a tourism web platform designed to help travelers explore India's hidden gems and plan trips. With a user-friendly interface, a static chatbot, and curated itineraries, Atulya Yatra enhances travel experiences by offering in-depth insights into destinations across India.</p>
-    
-            <div class="tags">
-                <span>Tourism</span>
-                <span>Flask</span>
-                <span>SQL</span>
-            </div>
-    
-            <div class="btn-group">
-                <a href="https://github.com/R4HUL0007/Atulya-Yatra" class="btn github" target="_blank">Github</a>
-            </div>
-        </div>
-        <div class="project-card">
-            <h3>RideXShare - Ride Sharing Platform </h3>
-            
-            <p>A MERN-based platform that allows students and faculty to offer, find, and book campus rides. It features real-time notifications, gender-based matching, and role-based filtering for safe, efficient, and eco-friendly commuting.</p>
-    
-            <div class="tags">
-                <span>React</span>
-                <span>Node</span>
-                <span>Mongo</span>
-                <span>Express</span>
-                
-            </div>
-    
-            <div class="btn-group">
-                <a href="https://github.com/R4HUL0007/RideShare" class="btn github" target="_blank">Github</a>
-            </div>
-        </div>
-    </section>
-    
+                <span class="cap reveal">Hi there! I'm</span>
+                <h1 class="hero__name reveal">RAHUL <span class="b">MEHTA</span></h1>
+                <p class="hero__role reveal">Web Developer</p>
+                <p class="hero__lede reveal">
+                    I build digital experiences that are fast, scalable and
+                    visually exceptional — one web-line at a time.
+                </p>
 
-    <section id ="contact" class="contact">
-        <h2>Lets <span class="highlight">Connect...</span></h2>
-        <form action="https://formspree.io/f/mldglojr" method="POST">
-            <label for="name">Name</label>
-            <input type="text" id="name" name="name" required>
-    
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" required>
-    
-            <label for="message">Message</label>
-            <textarea id="message" name="message" rows="4" required></textarea>
-    
-            <button type="submit">Send</button>
-        </form>
-    </section>
-    
+                <div class="hero__actions reveal">
+                    <a class="btn btn--primary" href="Rahul_Mehta1.pdf" target="_blank" rel="noopener">
+                        Resume <span aria-hidden="true">⬇</span>
+                    </a>
+                    <a class="btn btn--ghost" href="https://github.com/R4HUL0007" target="_blank" rel="noopener">
+                        <img src="images/icons/github.png" alt="" width="16" height="16" /> GitHub
+                    </a>
+                </div>
 
-    <footer>
-        <p></p>
-        <div class="social-icons" id="social">
-            <a href="https://github.com/R4HUL0007" target="_blank">
-                <img src="images/icons/github.png" alt="GitHub">
-            </a>
-            <a href="https://www.linkedin.com/in/rahul-mehta-616a5b212" target="_blank">
-                <img src="images/icons/linkedin.png" alt="LinkedIn">
-            </a>
-            <a href="https://x.com/RahulMe91416413" target="_blank">
-                <img src="images/icons/twitter.png" alt="Twitter">
-            </a>
-        </div>
-    </footer>
-    
+                <span class="hero__hint reveal" aria-hidden="true">
+                    🕸 <b>You're Spidey</b> — move to spin silk · click to shoot · scroll to swing down
+                </span>
+            </section>
 
+            <!-- ---------- TECH STACK ---------- -->
+            <section id="skills" class="panel tech reveal" data-sec aria-label="Tech stack">
+                <div class="kick">/ Powers</div>
+                <h2 class="section-title">Tech Stack</h2>
+                <ul class="chips chips--stack">
+                    <li class="chip">React</li>
+                    <li class="chip">Node.js</li>
+                    <li class="chip">MongoDB</li>
+                    <li class="chip">Python</li>
+                    <li class="chip">Flask</li>
+                    <li class="chip">JavaScript</li>
+                    <li class="chip">SQL</li>
+                    <li class="chip">HTML / CSS</li>
+                </ul>
+
+                <h3 class="tech__subtitle">Languages</h3>
+                <ul class="chips chips--stack">
+                    <li class="chip">C</li>
+                    <li class="chip">Java</li>
+                    <li class="chip">Python</li>
+                    <li class="chip">JavaScript</li>
+                </ul>
+            </section>
+
+            <!-- ---------- PROJECTS ---------- -->
+            <section id="projects" class="projects" data-sec aria-label="Featured projects">
+                <div class="projects__head reveal">
+                    <div>
+                        <div class="kick">/ Missions</div>
+                        <h2 class="section-title">Featured Projects</h2>
+                    </div>
+                    <a class="projects__all" href="https://github.com/R4HUL0007" target="_blank" rel="noopener">
+                        View all <span aria-hidden="true">→</span>
+                    </a>
+                </div>
+
+                <div class="projects__grid">
+                    <article class="project-card reveal">
+                        <p class="project-card__sub">Tourism Web App</p>
+                        <h3 class="project-card__title">Atulya Yatra</h3>
+                        <p class="project-card__desc">
+                            Explore India's hidden gems, plan trips, and get personalized
+                            itineraries with a smart chatbot.
+                        </p>
+                        <ul class="chips chips--sm"><li class="chip">Flask</li><li class="chip">SQL</li><li class="chip">Python</li></ul>
+                        <div class="project-card__actions">
+                            <a class="btn btn--ghost btn--sm" href="https://github.com/R4HUL0007/Atulya-Yatra" target="_blank" rel="noopener">
+                                <img src="images/icons/github.png" alt="" width="14" height="14" /> GitHub
+                            </a>
+                        </div>
+                    </article>
+
+                    <article class="project-card reveal">
+                        <div class="project-card__tag">LIVE</div>
+                        <p class="project-card__sub">Ride Sharing Platform</p>
+                        <h3 class="project-card__title">RideXShare</h3>
+                        <p class="project-card__desc">
+                            A MERN platform for students &amp; faculty to find, book, and
+                            share campus rides efficiently.
+                        </p>
+                        <ul class="chips chips--sm"><li class="chip">React</li><li class="chip">Node</li><li class="chip">MongoDB</li><li class="chip">Express</li></ul>
+                        <div class="project-card__actions">
+                            <a class="btn btn--primary btn--sm" href="https://ridexshare.online" target="_blank" rel="noopener">
+                                Live Demo <span aria-hidden="true">→</span>
+                            </a>
+                            <a class="btn btn--ghost btn--sm" href="https://github.com/R4HUL0007/RideShare" target="_blank" rel="noopener">
+                                <img src="images/icons/github.png" alt="" width="14" height="14" /> GitHub
+                            </a>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- ---------- EXPERIENCE ---------- -->
+            <section id="experience" class="panel experience reveal" data-sec aria-label="Experience">
+                <div class="kick">/ Origin</div>
+                <h2 class="section-title">Experience</h2>
+                <ol class="timeline">
+                    <li class="timeline__item">
+                        <div class="timeline__dot" aria-hidden="true"></div>
+                        <div class="timeline__content">
+                            <h3 class="timeline__role">AI / ML Intern <span class="badge-now"><span class="badge-now__dot" aria-hidden="true"></span> Currently working</span></h3>
+                            <span class="timeline__org">MyOnsite Healthcare</span>
+                            <p class="timeline__desc">
+                                Working on AI/ML solutions in the healthcare space — building and
+                                training models to turn data into practical, real-world insights.
+                            </p>
+                        </div>
+                    </li>
+                    <li class="timeline__item">
+                        <div class="timeline__dot" aria-hidden="true"></div>
+                        <div class="timeline__content">
+                            <h3 class="timeline__role">Full-Stack Developer <span class="muted">· Intern</span></h3>
+                            <a class="timeline__org" href="https://www.shadowfox.in/" target="_blank" rel="noopener">ShadowFox</a>
+                            <p class="timeline__desc">
+                                Building responsive, dynamic web solutions across the stack — crafting
+                                interfaces and services that engage users and drive results.
+                            </p>
+                        </div>
+                    </li>
+                    <li class="timeline__item">
+                        <div class="timeline__dot" aria-hidden="true"></div>
+                        <div class="timeline__content">
+                            <h3 class="timeline__role">B.Tech, Computer Science &amp; Engineering</h3>
+                            <span class="timeline__org">Completed</span>
+                            <p class="timeline__desc">
+                                Graduated with a passion for crafting responsive and dynamic web
+                                solutions, building the future one line of code at a time.
+                            </p>
+                        </div>
+                    </li>
+                </ol>
+            </section>
+
+            <!-- ---------- CONTACT ---------- -->
+            <section id="contact" class="panel contact reveal" data-sec aria-label="Contact">
+                <div class="kick">/ Signal</div>
+                <h2 class="section-title">Let's Connect</h2>
+                <form class="contact__form" action="https://formspree.io/f/mldglojr" method="POST" id="contactForm">
+                    <div class="field">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" autocomplete="name" required />
+                    </div>
+                    <div class="field">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" autocomplete="email" required />
+                    </div>
+                    <div class="field">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="4" required></textarea>
+                    </div>
+                    <button class="btn btn--primary btn--block" type="submit">
+                        Shoot Message <span aria-hidden="true">🕸</span>
+                    </button>
+                </form>
+            </section>
+
+            <!-- ---------- SOCIAL / FOOTER ---------- -->
+            <footer id="social" class="footer reveal" data-sec aria-label="Social links">
+                <div class="footer__social">
+                    <a href="https://github.com/R4HUL0007" target="_blank" rel="noopener" aria-label="GitHub">
+                        <img src="images/icons/github.png" alt="" width="26" height="26" />
+                    </a>
+                    <a href="https://www.linkedin.com/in/rahul-mehta-616a5b212" target="_blank" rel="noopener" aria-label="LinkedIn">
+                        <img src="images/icons/linkedin.png" alt="" width="26" height="26" />
+                    </a>
+                    <a href="https://x.com/RahulMe91416413" target="_blank" rel="noopener" aria-label="Twitter / X">
+                        <img src="images/icons/twitter.png" alt="" width="26" height="26" />
+                    </a>
+                </div>
+                <p class="footer__note">Building the future, one line of code at a time.</p>
+                <p class="footer__copy muted">© 2024 Rahul Mehta</p>
+            </footer>
+        </main>
+    </div>
 </body>
 </html>
