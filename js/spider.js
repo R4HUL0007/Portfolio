@@ -197,6 +197,11 @@ export function initJourney({ reducedMotion }) {
     spine.setAttribute("aria-hidden", "true");
     document.body.appendChild(spine);
 
+    const progress = document.createElement("div");
+    progress.id = "journeyProgress";
+    progress.setAttribute("aria-hidden", "true");
+    document.body.appendChild(progress);
+
     const traveler = createSpider({ size: 62 });
     traveler.id = "journeyTraveler";
     document.body.appendChild(traveler);
@@ -218,6 +223,7 @@ export function initJourney({ reducedMotion }) {
             const y = top + (bot - top) * prog;
             const sw = Math.sin(Date.now() / 1400) * 12;
             traveler.style.transform = `translate(-50%, -50%) translate(${sw}px, ${y}px) rotate(${sw / 2.5}deg)`;
+            progress.style.height = y + "px";
 
             for (let i = 0; i < secs.length; i++) {
                 const r = secs[i].getBoundingClientRect();

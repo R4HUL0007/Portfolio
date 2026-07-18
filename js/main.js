@@ -2,8 +2,10 @@
 // (cursor + scroll journey + hero web). Everything degrades gracefully and
 // respects prefers-reduced-motion.
 
-import { initSpiderCursor, initJourney, mountHangSpider } from "./spider.js";
+import { initSpiderCursor, initJourney } from "./spider.js";
 import { buildWeb } from "./web.js";
+import { initMagnetic, initCountUp } from "./enhance.js";
+import { initChatbot } from "./chatbot.js";
 
 const motionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
 
@@ -86,7 +88,6 @@ function initSpiderSystem() {
     const webSvg = document.getElementById("heroWeb");
     if (webSvg) buildWeb(webSvg, { cx: 560, cy: 180, radius: 640, spokes: 26, rings: 14, sag: 0.15 });
 
-    mountHangSpider(document.getElementById("hangSpider"));
     initSpiderCursor();
     initJourney({ reducedMotion });
 }
@@ -97,6 +98,9 @@ function boot() {
     initScrollSpy();
     initReveals();
     initSpiderSystem();
+    initMagnetic();
+    initCountUp({ reducedMotion: motionQuery.matches });
+    initChatbot();
 }
 
 if (document.readyState === "loading") {

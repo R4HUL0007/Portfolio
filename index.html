@@ -62,7 +62,6 @@
             <!-- ---------- HERO ---------- -->
             <section id="about" class="hero" data-sec aria-label="Introduction">
                 <svg class="hero-web" id="heroWeb" viewBox="0 0 760 700" aria-hidden="true"></svg>
-                <div class="hang-spider" id="hangSpider" aria-hidden="true"></div>
                 <span class="bang hero__thwip" aria-hidden="true">THWIP!</span>
 
                 <span class="cap reveal">Hi there! I'm</span>
@@ -88,27 +87,30 @@
             </section>
 
             <!-- ---------- TECH STACK ---------- -->
-            <section id="skills" class="panel tech reveal" data-sec aria-label="Tech stack">
+            <section id="skills" class="tech reveal" data-sec aria-label="Tech stack">
                 <div class="kick">/ Powers</div>
-                <h2 class="section-title">Tech Stack</h2>
-                <ul class="chips chips--stack">
-                    <li class="chip">React</li>
-                    <li class="chip">Node.js</li>
-                    <li class="chip">MongoDB</li>
-                    <li class="chip">Python</li>
-                    <li class="chip">Flask</li>
-                    <li class="chip">JavaScript</li>
-                    <li class="chip">SQL</li>
-                    <li class="chip">HTML / CSS</li>
-                </ul>
+                <div class="techbox">
+                    <h2 class="techbox__title">Tech Stack</h2>
+                    <div class="techbox__accent" aria-hidden="true"></div>
+                    <div class="techrow">
+                        <div class="techrow__item"><img src="images/icons/react.png" alt="" /><span>React</span></div>
+                        <div class="techrow__item"><img src="images/icons/node.png" alt="" /><span>Node.js</span></div>
+                        <div class="techrow__item"><img src="images/icons/javascript.png" alt="" /><span>JavaScript</span></div>
+                        <div class="techrow__item"><img src="images/icons/mongo.png" alt="" /><span>MongoDB</span></div>
+                        <div class="techrow__item"><img src="images/icons/python.png" alt="" /><span>Python</span></div>
+                        <div class="techrow__item"><img src="images/icons/flask.png" alt="" /><span>Flask</span></div>
+                        <div class="techrow__item"><img src="images/icons/html.png" alt="" /><span>HTML</span></div>
+                        <div class="techrow__item"><img src="images/icons/css.png" alt="" /><span>CSS</span></div>
+                    </div>
 
-                <h3 class="tech__subtitle">Languages</h3>
-                <ul class="chips chips--stack">
-                    <li class="chip">C</li>
-                    <li class="chip">Java</li>
-                    <li class="chip">Python</li>
-                    <li class="chip">JavaScript</li>
-                </ul>
+                    <h3 class="techbox__sub">Languages</h3>
+                    <div class="techrow techrow--sm">
+                        <div class="techrow__item"><img src="images/icons/c.png" alt="" /><span>C</span></div>
+                        <div class="techrow__item"><img src="images/icons/java.png" alt="" /><span>Java</span></div>
+                        <div class="techrow__item"><img src="images/icons/python.png" alt="" /><span>Python</span></div>
+                        <div class="techrow__item"><img src="images/icons/javascript.png" alt="" /><span>JavaScript</span></div>
+                    </div>
+                </div>
             </section>
 
             <!-- ---------- PROJECTS ---------- -->
@@ -123,10 +125,15 @@
                     </a>
                 </div>
 
-                <div class="projects__grid">
-                    <article class="project-card reveal">
-                        <p class="project-card__sub">Tourism Web App</p>
-                        <h3 class="project-card__title">Atulya Yatra</h3>
+                <div class="bento">
+                    <article class="project-card bento__project reveal">
+                        <div class="project-card__head">
+                            <div class="project-card__logo" aria-hidden="true">🏔</div>
+                            <div>
+                                <h3 class="project-card__title">Atulya Yatra</h3>
+                                <p class="project-card__sub">Tourism Web App</p>
+                            </div>
+                        </div>
                         <p class="project-card__desc">
                             Explore India's hidden gems, plan trips, and get personalized
                             itineraries with a smart chatbot.
@@ -139,10 +146,15 @@
                         </div>
                     </article>
 
-                    <article class="project-card reveal">
+                    <article class="project-card bento__project reveal">
                         <div class="project-card__tag">LIVE</div>
-                        <p class="project-card__sub">Ride Sharing Platform</p>
-                        <h3 class="project-card__title">RideXShare</h3>
+                        <div class="project-card__head">
+                            <div class="project-card__logo" aria-hidden="true">🚗</div>
+                            <div>
+                                <h3 class="project-card__title">RideXShare</h3>
+                                <p class="project-card__sub">Ride Sharing Platform</p>
+                            </div>
+                        </div>
                         <p class="project-card__desc">
                             A MERN platform for students &amp; faculty to find, book, and
                             share campus rides efficiently.
@@ -157,6 +169,7 @@
                             </a>
                         </div>
                     </article>
+
                 </div>
             </section>
 
@@ -169,7 +182,7 @@
                         <div class="timeline__dot" aria-hidden="true"></div>
                         <div class="timeline__content">
                             <h3 class="timeline__role">AI / ML Intern <span class="badge-now"><span class="badge-now__dot" aria-hidden="true"></span> Currently working</span></h3>
-                            <span class="timeline__org">MyOnsite Healthcare</span>
+                            <a class="timeline__org" href="https://myonsitehealthcare.com/" target="_blank" rel="noopener">MyOnsite Healthcare ↗</a>
                             <p class="timeline__desc">
                                 Working on AI/ML solutions in the healthcare space — building and
                                 training models to turn data into practical, real-world insights.
@@ -205,23 +218,39 @@
             <section id="contact" class="panel contact reveal" data-sec aria-label="Contact">
                 <div class="kick">/ Signal</div>
                 <h2 class="section-title">Let's Connect</h2>
-                <form class="contact__form" action="https://formspree.io/f/mldglojr" method="POST" id="contactForm">
-                    <div class="field">
-                        <label for="name">Name</label>
-                        <input type="text" id="name" name="name" autocomplete="name" required />
+
+                <div class="contact__grid">
+                    <div class="contact__intro">
+                        <span class="contact__status"><span class="stat-tile__live" aria-hidden="true"></span> Open to opportunities</span>
+                        <h3 class="contact__title">Let's build something <span class="accent">amazing</span>.</h3>
+                        <p class="contact__text">
+                            Have a project, a role, or just want to say hi? Drop a message and
+                            I'll swing back to you soon.
+                        </p>
                     </div>
-                    <div class="field">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" autocomplete="email" required />
-                    </div>
-                    <div class="field">
-                        <label for="message">Message</label>
-                        <textarea id="message" name="message" rows="4" required></textarea>
-                    </div>
-                    <button class="btn btn--primary btn--block" type="submit">
-                        Shoot Message <span aria-hidden="true">🕸</span>
-                    </button>
-                </form>
+
+                    <form class="contact__form" action="https://formspree.io/f/mldglojr" method="POST" id="contactForm">
+                        <div class="field">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" autocomplete="name" required />
+                        </div>
+                        <div class="field">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" autocomplete="email" required />
+                        </div>
+                        <div class="field">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" placeholder="What's this about?" />
+                        </div>
+                        <div class="field">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button class="btn btn--primary btn--block" type="submit">
+                            Shoot Message <span aria-hidden="true">🕸</span>
+                        </button>
+                    </form>
+                </div>
             </section>
 
             <!-- ---------- SOCIAL / FOOTER ---------- -->
@@ -241,6 +270,31 @@
                 <p class="footer__copy muted">© 2024 Rahul Mehta</p>
             </footer>
         </main>
+    </div>
+
+    <!-- ===================== CHATBOT (canned answers, no real AI) ===================== -->
+    <div class="chatbot" id="chatbot">
+        <button class="chatbot__toggle" id="chatToggle" type="button" aria-label="Chat about Rahul" aria-expanded="false">
+            <span class="chatbot__toggle-icon" aria-hidden="true">🕸</span>
+        </button>
+        <div class="chatbot__panel" id="chatPanel" role="dialog" aria-label="Chat with Rahul's web-bot" hidden>
+            <div class="chatbot__head">
+                <div class="chatbot__head-info">
+                    <span class="chatbot__title">WebBot <span class="chatbot__dot" aria-hidden="true"></span></span>
+                    <span class="chatbot__sub">Ask me about Rahul</span>
+                </div>
+                <div class="chatbot__actions">
+                    <button class="chatbot__clear" id="chatClear" type="button" aria-label="Clear chat">Clear</button>
+                    <button class="chatbot__close" id="chatClose" type="button" aria-label="Close chat">✕</button>
+                </div>
+            </div>
+            <div class="chatbot__body" id="chatBody" aria-live="polite"></div>
+            <div class="chatbot__quick" id="chatQuick"></div>
+            <form class="chatbot__form" id="chatForm" autocomplete="off">
+                <input class="chatbot__input" id="chatInput" type="text" placeholder="Ask me something..." aria-label="Type your message" />
+                <button class="chatbot__send" type="submit" aria-label="Send">➤</button>
+            </form>
+        </div>
     </div>
 </body>
 </html>
